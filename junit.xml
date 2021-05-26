@@ -1,70 +1,12 @@
-<testsuites name="jest tests" tests="4" failures="4" time="14.719">
-  <testsuite name="undefined" errors="0" failures="4" skipped="0" timestamp="2021-05-26T19:23:04" time="14.719" tests="4">
-    <testcase classname=" initial UI is rendered as expected" name=" initial UI is rendered as expected" time="0.041">
-      <failure>Error: expect(received).toBe(expected)
-
-Expected value to be (using ===):
-  null
-Received:
-  &lt;div class=&quot;total-matches&quot; data-testid=&quot;total-matches&quot; /&gt;
-
-Difference:
-
-  Comparing two different types of values. Expected null but received object.
-    at Object.&lt;anonymous&gt;.test (/projects/challenge/src/App.test.js:18:42)
-    at Object.asyncFn (/projects/challenge/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
-    at resolve (/projects/challenge/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
-    at new Promise (&lt;anonymous&gt;)
-    at mapper (/projects/challenge/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
-    at Promise.resolve.then.el (/projects/challenge/node_modules/p-map/index.js:46:16)
-    at &lt;anonymous&gt;
-    at process._tickCallback (internal/process/next_tick.js:189:7)</failure>
+<testsuites name="jest tests" tests="4" failures="0" time="1.168">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2021-05-26T20:43:13" time="1.168" tests="4">
+    <testcase classname=" initial UI is rendered as expected" name=" initial UI is rendered as expected" time="0.032">
     </testcase>
-    <testcase classname=" search is made on by clicking on search button and no results found" name=" search is made on by clicking on search button and no results found" time="4.603">
-      <failure>Error: expect(received).toBe(expected)
-
-Expected value to be (using ===):
-  null
-Received:
-  &lt;div class=&quot;total-matches&quot; data-testid=&quot;total-matches&quot; /&gt;
-
-Difference:
-
-  Comparing two different types of values. Expected null but received object.
-    at /projects/challenge/src/App.test.js:32:44
-    at runExpectation (/projects/challenge/node_modules/wait-for-expect/lib/index.js:49:25)
-    at Timeout.callback [as _onTimeout] (/projects/challenge/node_modules/jsdom/lib/jsdom/browser/Window.js:523:19)
-    at ontimeout (timers.js:498:11)
-    at tryOnTimeout (timers.js:323:5)
-    at Timer.listOnTimeout (timers.js:290:5)</failure>
+    <testcase classname=" search is made on by clicking on search button and no results found" name=" search is made on by clicking on search button and no results found" time="0.023">
     </testcase>
-    <testcase classname=" search is made on by clicking on search button and result found - test 1" name=" search is made on by clicking on search button and result found - test 1" time="4.581">
-      <failure>Error: expect(element).toHaveTextContent()
-
-Expected element to have text content:
-  Total matches: 3
-Received:
-
-    at /projects/challenge/src/App.test.js:48:44
-    at runExpectation (/projects/challenge/node_modules/wait-for-expect/lib/index.js:49:25)
-    at Timeout.callback [as _onTimeout] (/projects/challenge/node_modules/jsdom/lib/jsdom/browser/Window.js:523:19)
-    at ontimeout (timers.js:498:11)
-    at tryOnTimeout (timers.js:323:5)
-    at Timer.listOnTimeout (timers.js:290:5)</failure>
+    <testcase classname=" search is made on by clicking on search button and result found - test 1" name=" search is made on by clicking on search button and result found - test 1" time="0.015">
     </testcase>
-    <testcase classname=" search is made on by clicking on search button and result found - test 2" name=" search is made on by clicking on search button and result found - test 2" time="4.571">
-      <failure>Error: expect(element).toHaveTextContent()
-
-Expected element to have text content:
-  Total matches: 2
-Received:
-
-    at /projects/challenge/src/App.test.js:67:44
-    at runExpectation (/projects/challenge/node_modules/wait-for-expect/lib/index.js:49:25)
-    at Timeout.callback [as _onTimeout] (/projects/challenge/node_modules/jsdom/lib/jsdom/browser/Window.js:523:19)
-    at ontimeout (timers.js:498:11)
-    at tryOnTimeout (timers.js:323:5)
-    at Timer.listOnTimeout (timers.js:290:5)</failure>
+    <testcase classname=" search is made on by clicking on search button and result found - test 2" name=" search is made on by clicking on search button and result found - test 2" time="0.012">
     </testcase>
   </testsuite>
 </testsuites>

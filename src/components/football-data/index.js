@@ -8,15 +8,27 @@ export default class FootballMatchesData extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedYear: null
+      selectedYear: null,
+      yearData : [],
+        totalYearData : 0
     };
   }
 
   onClick = (year) => (e) => {
-    // Code written in next line is to take care of adding active class to selected year for css purpose.
-    this.setState({
-      selectedYear: year
-    })
+
+      fetch('https://jsonmock.hackerrank.com/api/football_competitions?year=' + year)
+          .then(response => response.json())
+          .then(data => {
+              this.setState({
+                  selectedYear: year,
+                  yearData: data.data,
+                  totalYearData: data.data.length
+              })
+          })
+          .catch(function (error) {
+              // console.log(error)
+          });
+
   }
 
   render() {
@@ -42,15 +54,31 @@ export default class FootballMatchesData extends Component {
         </ul>
 
         <section className="content">
-          <section>
-            <div className="total-matches" data-testid="total-matches"></div>
-            
-            <ul className="mr-20 matches styled" data-testid="match-list">
-              <li className="slide-up-fade-in"> </li>
-            </ul>
-          </section>
 
-          <div data-testid="no-result" className="slide-up-fade-in no-result"></div>
+
+              {this.state.selectedYear !== null &&
+                  <section>
+                      <div>
+                          {this.state.totalYearData > 0 &&
+                          <div className="total-matches" data-testid="total-matches">
+                              Total matches: {this.state.totalYearData}
+                          </div>
+                          }
+                          {this.state.totalYearData ?
+                              <ul className="mr-20 matches styled" data-testid="match-list">
+                                  {this.state.yearData.map((data, i) => {
+                                      return (
+                                          <li className="slide-up-fade-in" key={i}>Match {data.name} won by {data.winner}</li>
+                                      )
+                                  })}
+                              </ul>
+                              :
+                              <div data-testid="no-result" className="slide-up-fade-in no-result">No Matches Found</div>
+                          }
+                      </div>
+                  </section>
+              }
+
         </section>
       </div>
     );
